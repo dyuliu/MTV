@@ -1,0 +1,7 @@
+mtv.controllers.comment module
+==============================
+
+.. automodule:: mtv.controllers.comment
+   :members:
+   :undoc-members:
+   :show-inheritance:

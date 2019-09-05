@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mtv.controllers.datarun &mdash; mtv 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> mtv
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#before-you-begin">Before You Begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#get-started">Get Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#downloading-mtv">Downloading MTV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#cloning-from-github">Cloning from Github</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#downloading-the-zip-file">Downloading the zip file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#quick-install">Quick Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#data">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#using-your-own-data">Using your own data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#running-your-application">Running Your Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#development">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#production-deploy-in-local-secure-environment">Production deploy in local secure environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#stable-release">Stable release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#from-source">From source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mtv.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/mtv.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.controllers.html">mtv.controllers package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/mtv.controllers.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.data.html">mtv.data package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/mtv.data.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/mtv.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.cli.html">mtv.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.explorer.html">mtv.explorer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.model.html">mtv.model module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.routes.html">mtv.routes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.utils.html">mtv.utils module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#types-of-contributions">Types of Contributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#report-bugs">Report Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#fix-bugs">Fix Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#implement-features">Implement Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#write-documentation">Write Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#submit-feedback">Submit Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#pull-request-guidelines">Pull Request Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#unit-testing-guidelines">Unit Testing Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#release-workflow">Release Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../authors.html">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../authors.html#development-lead">Development Lead</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../authors.html#contributors">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../history.html">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../history.html#id1">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">mtv</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>mtv.controllers.datarun</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for mtv.controllers.datarun</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="k">import</span> <span class="n">Resource</span>
+
+<span class="kn">from</span> <span class="nn">mtv</span> <span class="k">import</span> <span class="n">model</span>
+
+<span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Datarun"><a class="viewcode-back" href="../../../api/mtv.controllers.datarun.html#mtv.controllers.datarun.Datarun">[docs]</a><span class="k">class</span> <span class="nc">Datarun</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<div class="viewcode-block" id="Datarun.get"><a class="viewcode-back" href="../../../api/mtv.controllers.datarun.html#mtv.controllers.datarun.Datarun.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datarun</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; GET /api/v1/dataruns/&lt;datarun:string&gt;/ &quot;&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="Datarun.delete"><a class="viewcode-back" href="../../../api/mtv.controllers.datarun.html#mtv.controllers.datarun.Datarun.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datarun</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; DEL /api/v1/dataruns/&lt;datarun:string&gt;/ &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s1">&#39;delete&#39;</span></div>
+
+<div class="viewcode-block" id="Datarun.put"><a class="viewcode-back" href="../../../api/mtv.controllers.datarun.html#mtv.controllers.datarun.Datarun.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datarun</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; PUT /api/v1/dataruns/&lt;datarun:string&gt;/ &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s1">&#39;put&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="Dataruns"><a class="viewcode-back" href="../../../api/mtv.controllers.datarun.html#mtv.controllers.datarun.Dataruns">[docs]</a><span class="k">class</span> <span class="nc">Dataruns</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<div class="viewcode-block" id="Dataruns.get"><a class="viewcode-back" href="../../../api/mtv.controllers.datarun.html#mtv.controllers.datarun.Dataruns.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Return datarun list of a given dataset. If the dataset is not</span>
+<span class="sd">            specified, return all dataruns.</span>
+
+<span class="sd">        GET /api/v1/dataruns/dataset?=xxx</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="c1"># Return datarun list of a given dataset</span>
+
+            <span class="n">document</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">document</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[]</span>
+
+            <span class="n">dataset_id</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">id</span>
+
+            <span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;dataset&#39;</span><span class="p">:</span> <span class="n">dataset_id</span>
+            <span class="p">}</span>
+
+            <span class="n">documents</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Datarun</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="o">**</span><span class="n">query</span><span class="p">)</span>
+
+            <span class="n">docs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">:</span>
+                <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+                    <span class="s1">&#39;insert_time&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">insert_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                    <span class="s1">&#39;start_time&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                    <span class="s1">&#39;end_time&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">end_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                    <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+                    <span class="s1">&#39;created_by&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">created_by</span><span class="p">,</span>
+                    <span class="s1">&#39;events&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">events</span><span class="p">,</span>
+                    <span class="s1">&#39;pipeline&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                <span class="p">})</span>
+
+            <span class="k">return</span> <span class="n">docs</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Return all</span>
+            <span class="n">dataset_docs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">dataset_docs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[]</span>
+
+            <span class="n">docs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">dataset_doc</span> <span class="ow">in</span> <span class="n">dataset_docs</span><span class="p">:</span>
+                <span class="n">dataset_id</span> <span class="o">=</span> <span class="n">dataset_doc</span><span class="o">.</span><span class="n">id</span>
+
+                <span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;dataset&#39;</span><span class="p">:</span> <span class="n">dataset_id</span>
+                <span class="p">}</span>
+
+                <span class="n">documents</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Datarun</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="o">**</span><span class="n">query</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">:</span>
+                    <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+                        <span class="s1">&#39;insert_time&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">insert_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                        <span class="s1">&#39;start_time&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                        <span class="s1">&#39;end_time&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">end_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                        <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+                        <span class="s1">&#39;created_by&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">created_by</span><span class="p">,</span>
+                        <span class="s1">&#39;events&#39;</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">events</span><span class="p">,</span>
+                        <span class="s1">&#39;pipeline&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                    <span class="p">})</span>
+
+            <span class="k">return</span> <span class="n">docs</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dongyu Liu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

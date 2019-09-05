@@ -1,0 +1,21 @@
+mtv.controllers package
+=======================
+
+.. automodule:: mtv.controllers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+
+   mtv.controllers.comment
+   mtv.controllers.data
+   mtv.controllers.datarun
+   mtv.controllers.dataset
+   mtv.controllers.event
+   mtv.controllers.experiment
+   mtv.controllers.pipeline
+   mtv.controllers.test

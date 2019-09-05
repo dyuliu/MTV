@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mtv.cli &mdash; mtv 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> mtv
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#before-you-begin">Before You Begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#get-started">Get Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../readme.html#downloading-mtv">Downloading MTV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#cloning-from-github">Cloning from Github</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#downloading-the-zip-file">Downloading the zip file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../readme.html#quick-install">Quick Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../readme.html#data">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#using-your-own-data">Using your own data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../readme.html#running-your-application">Running Your Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../readme.html#development">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../readme.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readme.html#production-deploy-in-local-secure-environment">Production deploy in local secure environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#stable-release">Stable release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#from-source">From source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/mtv.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/mtv.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.controllers.html">mtv.controllers package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.controllers.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.data.html">mtv.data package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.data.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/mtv.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.cli.html">mtv.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.explorer.html">mtv.explorer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.model.html">mtv.model module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.routes.html">mtv.routes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.utils.html">mtv.utils module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#types-of-contributions">Types of Contributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#report-bugs">Report Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#fix-bugs">Fix Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#implement-features">Implement Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#write-documentation">Write Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#submit-feedback">Submit Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#pull-request-guidelines">Pull Request Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#unit-testing-guidelines">Unit Testing Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#release-workflow">Release Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../authors.html#development-lead">Development Lead</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authors.html#contributors">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../history.html#id1">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mtv</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>mtv.cli</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for mtv.cli</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">from</span> <span class="nn">mtv.explorer</span> <span class="k">import</span> <span class="n">MTVExplorer</span>
+<span class="kn">from</span> <span class="nn">mtv.utils</span> <span class="k">import</span> <span class="n">read_config</span><span class="p">,</span> <span class="n">setup_logging</span>
+
+
+<span class="k">def</span> <span class="nf">_run</span><span class="p">(</span><span class="n">explorer</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">module</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">explorer</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">explorer</span><span class="o">.</span><span class="n">run_module</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_add_aggdata</span><span class="p">(</span><span class="n">explorer</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+    <span class="n">explorer</span><span class="o">.</span><span class="n">add_aggdata</span><span class="p">(</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">col</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">timestamp_column</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">value_column</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">header</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">interval</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_parser"><a class="viewcode-back" href="../../api/mtv.cli.html#mtv.cli.get_parser">[docs]</a><span class="k">def</span> <span class="nf">get_parser</span><span class="p">():</span>
+
+    <span class="c1"># Common Parent - Shared options</span>
+    <span class="n">common</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">add_help</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">,</span> <span class="s1">&#39;--logfile&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Name of the logfile.&#39;</span>
+                             <span class="s1">&#39;If not given, log to stdout.&#39;</span><span class="p">)</span>
+
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Be verbose. Use -vv for increased verbosity.&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;MTV Command Line Interface.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># mtv [action]</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;action&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;action&#39;</span><span class="p">)</span>
+    <span class="n">action</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># mtv run</span>
+    <span class="n">run</span> <span class="o">=</span> <span class="n">action</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Start flask server&#39;</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="n">common</span><span class="p">])</span>
+    <span class="n">run</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">function</span><span class="o">=</span><span class="n">_run</span><span class="p">)</span>
+
+    <span class="n">run</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-P&#39;</span><span class="p">,</span> <span class="s1">&#39;--port&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flask server port&#39;</span><span class="p">)</span>
+    <span class="n">run</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-E&#39;</span><span class="p">,</span> <span class="s1">&#39;--env&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flask environment&#39;</span><span class="p">)</span>
+    <span class="n">run</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;--module&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Run a specific module&#39;</span>
+                     <span class="s1">&#39;with main() function&#39;</span><span class="p">)</span>
+    <span class="n">run</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--args&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                     <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The args to the main()&#39;</span><span class="p">)</span>
+
+    <span class="c1"># mtv add</span>
+    <span class="n">add</span> <span class="o">=</span> <span class="n">action</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Add an object to the database&#39;</span><span class="p">)</span>
+    <span class="n">add_model</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;model&#39;</span><span class="p">)</span>
+    <span class="n">add_model</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># mtv add aggdata</span>
+    <span class="n">add_aggdata</span> <span class="o">=</span> <span class="n">add_model</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;aggdata&#39;</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="n">common</span><span class="p">],</span>
+                                       <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Add raw data&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">function</span><span class="o">=</span><span class="n">_add_aggdata</span><span class="p">)</span>
+
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-T&#39;</span><span class="p">,</span> <span class="s1">&#39;--timestamp-column&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                             <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Position of the timestamp column in the CSV&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-V&#39;</span><span class="p">,</span> <span class="s1">&#39;--value-column&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                             <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Position of the value column in the CSV&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-H&#39;</span><span class="p">,</span> <span class="s1">&#39;--header&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                             <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Whether having header in the CSV&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-I&#39;</span><span class="p">,</span> <span class="s1">&#39;--interval&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                             <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Interval (minute) used for data aggregation.&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--start&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Start time, as an integer unix timestamp&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--stop&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Stop time, as an integer unix timestamp&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--col&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Collection name&#39;</span><span class="p">)</span>
+    <span class="n">add_aggdata</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;path&#39;</span><span class="p">,</span>
+        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to the csv data directory&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span></div>
+
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../api/mtv.cli.html#mtv.cli.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">get_parser</span><span class="p">()</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">setup_logging</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">logfile</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">read_config</span><span class="p">(</span><span class="s1">&#39;./mtv/config.yaml&#39;</span><span class="p">)</span>
+    <span class="n">explorer</span> <span class="o">=</span> <span class="n">MTVExplorer</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="n">args</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">explorer</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dongyu Liu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

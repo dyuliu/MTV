@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MTV &mdash; mtv 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MTV" href="readme.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> mtv
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#before-you-begin">Before You Begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#get-started">Get Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#downloading-mtv">Downloading MTV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#cloning-from-github">Cloning from Github</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#downloading-the-zip-file">Downloading the zip file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#quick-install">Quick Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#data">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#using-your-own-data">Using your own data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#running-your-application">Running Your Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#development">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#production-deploy-in-local-secure-environment">Production deploy in local secure environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#stable-release">Stable release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#from-source">From source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/mtv.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/mtv.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.controllers.html">mtv.controllers package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mtv.controllers.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.data.html">mtv.data package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mtv.data.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/mtv.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.cli.html">mtv.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.explorer.html">mtv.explorer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.model.html">mtv.model module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.routes.html">mtv.routes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.utils.html">mtv.utils module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#types-of-contributions">Types of Contributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#report-bugs">Report Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#fix-bugs">Fix Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#implement-features">Implement Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#write-documentation">Write Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#submit-feedback">Submit Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#pull-request-guidelines">Pull Request Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#unit-testing-guidelines">Unit Testing Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#release-workflow">Release Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authors.html#development-lead">Development Lead</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authors.html#contributors">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id1">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">mtv</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>MTV</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/HDI-Project/MTV/blob/master/docs/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p align="left">
+<img width=15% src="https://dai.lids.mit.edu/wp-content/uploads/2018/06/Logo_DAI_highres.png" alt=“DAI-Lab” />
+<i>An open source project from Data to AI Lab at MIT.</i>
+</p><a class="reference external image-reference" href="https://pypi.python.org/pypi/mtv"><img alt="PyPI Shield" src="https://img.shields.io/pypi/v/mtv.svg" /></a>
+<a class="reference external image-reference" href="https://travis-ci.org/liudy1991/mtv"><img alt="Travis CI Shield" src="https://travis-ci.org/liudy1991/mtv.svg?branch=master" /></a>
+<div class="section" id="mtv">
+<h1>MTV<a class="headerlink" href="#mtv" title="Permalink to this headline">¶</a></h1>
+<p><strong>MTV</strong> is a visual analytics system built for anomaly analysis of multiple time-series data.</p>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/HDI-Project/MTV/blob/master/LICENSE">The MIT License</a></p>
+</div>
+<div class="section" id="before-you-begin">
+<h2>Before You Begin<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h2>
+<p>Before you begin we recommend you read about the basic building blocks that assemble the <strong>MTV</strong>:</p>
+<ul class="simple">
+<li><p><strong>Python (&gt;=3.0)</strong> - MTV has been developed and runs on <a class="reference external" href="https://www.python.org/downloads/release/python-360/">Python 3.6</a>. Although it is not strictly required, the usage of a <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> is highly recommended in order to avoid interfering with other software installed in the system where <strong>MTV</strong> is run.</p></li>
+<li><p><strong>Flask (&gt;=1.0.2)</strong> - The best way to understand express is through its <a class="reference external" href="http://flask.pocoo.org/">Official Website</a>, which has a good <a class="reference external" href="http://flask.pocoo.org/docs/1.0/tutorial/">Tutorial</a>. We use <a class="reference external" href="https://flask-restful.readthedocs.io/en/latest/">Flask-RESTful</a> as an extension of Flask to quickly build <a class="reference external" href="https://www.restapitutorial.com/">REST APIs</a>.</p></li>
+<li><p><strong>Typescript (&gt;=3.0)</strong> - Typescript’s <a class="reference external" href="https://www.typescriptlang.org/docs/home.html">Official Documentation</a> is a great starting point.</p></li>
+<li><p><strong>MongoDB (&gt;=3.6)</strong> - Go through <a class="reference external" href="http://mongodb.org/">MongoDB Official Website</a> and proceed to their <a class="reference external" href="http://docs.mongodb.org/manual/">Official Manual</a>, which should help you understand NoSQL and MongoDB better.</p></li>
+</ul>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you have installed all of the following prerequisites on your development machine:</p>
+<ul>
+<li><p><strong>Git</strong> - <a class="reference external" href="https://git-scm.com/downloads">Download &amp; Install Git</a>. OSX and Linux machines typically have this already installed.</p></li>
+<li><p><strong>Node.js (&gt;= 10.0.0)</strong> - <a class="reference external" href="https://nodejs.org/en/download/">Download &amp; Install Node.js</a> and the npm package manager. Make sure to install gulp-cli globally after the installation of Node.js.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npm install --quiet -g gulp-cli
+</pre></div>
+</div>
+</li>
+<li><p><strong>MongoDB</strong> - <a class="reference external" href="http://www.mongodb.org/downloads">Download &amp; Install MongoDB</a>, and make sure it’s running on the default port (27017).</p></li>
+</ul>
+</div>
+<div class="section" id="get-started">
+<h2>Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="downloading-mtv">
+<h3>Downloading MTV<a class="headerlink" href="#downloading-mtv" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cloning-from-github">
+<h4>Cloning from Github<a class="headerlink" href="#cloning-from-github" title="Permalink to this headline">¶</a></h4>
+<p>The recommended way to get MTV is to use git to directly clone the MTV repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/HDI-Project/MTV mtv
+</pre></div>
+</div>
+<p>This will clone the latest version of the MTV repository to a <strong>mtv</strong> folder.</p>
+</div>
+<div class="section" id="downloading-the-zip-file">
+<h4>Downloading the zip file<a class="headerlink" href="#downloading-the-zip-file" title="Permalink to this headline">¶</a></h4>
+<p>Another way to use the MTV is to download a zip copy from the <a class="reference external" href="https://github.com/HDI-Project/MTV/archive/master.zip">master branch on GitHub</a>. You can also do this using the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://github.com/HDI-Project/MTV/archive/master.zip -O mtv.zip
+$ unzip mtv.zip
+$ rm mtv.zip
+</pre></div>
+</div>
+<p>Don’t forget to rename <strong>mtv-master</strong> after your project name.</p>
+</div>
+</div>
+<div class="section" id="quick-install">
+<h3>Quick Install<a class="headerlink" href="#quick-install" title="Permalink to this headline">¶</a></h3>
+<p>Once you’ve downloaded the MTV repository and installed all the prerequisites, you’re just a few steps away from running your application. To install the project, create a virtualenv and execute</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make install
+$ make install-theme
+</pre></div>
+</div>
+<p>This command will install all the dependencies needed for the application (server-end and client-end) to run. For development, use the following command instead, which will install some additional
+dependencies for code linting and testing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make install-develop
+$ make install-theme
+</pre></div>
+</div>
+</div>
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="downloading-the-nasa-public-data-for-demo">
+<h4>Downloading the NASA public data for demo<a class="headerlink" href="#downloading-the-nasa-public-data-for-demo" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make init-db
+$ make load-db-nasa
+</pre></div>
+</div>
+<p>This will download and restore the dataset into MongoDB.</p>
+</div>
+<div class="section" id="using-your-own-data">
+<h4>Using your own data<a class="headerlink" href="#using-your-own-data" title="Permalink to this headline">¶</a></h4>
+<p>You have to create a database with the name <strong>“mtv”</strong> in MongoDB. For the detailed data format in the database, you can refer to the demo data after executing the aforementioned command.</p>
+</div>
+</div>
+<div class="section" id="running-your-application">
+<h3>Running Your Application<a class="headerlink" href="#running-your-application" title="Permalink to this headline">¶</a></h3>
+<p>Please activate your virtualenv for MTV first, and then use the following command to run the application.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mtv run -v
+</pre></div>
+</div>
+<p>Your application should run on <strong>port 3000</strong> with the <a href="#id1"><span class="problematic" id="id2">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser. The following list the optional arguments for <code class="docutils literal notranslate"><span class="pre">mtv</span> <span class="pre">run</span></code></p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="k">usage</span><span class="p">:</span> <span class="n">mtv</span> <span class="n">run</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span> <span class="n">LOGFILE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">P</span> <span class="n">PORT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">E</span> <span class="n">ENV</span><span class="p">]</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="c1">--help            show this help message and exit</span>
+  <span class="o">-</span><span class="n">l</span> <span class="n">LOGFILE</span><span class="p">,</span> <span class="c1">--logfile LOGFILE</span>
+                        <span class="n">Name</span> <span class="k">of</span> <span class="n">the</span> <span class="n">logfile</span><span class="p">.</span> <span class="k">If</span> <span class="k">not</span> <span class="n">given</span><span class="p">,</span> <span class="n">log</span> <span class="k">to</span> <span class="k">stdout</span><span class="p">.</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="c1">--verbose         Be verbose. Use -vv for increased verbosity.</span>
+  <span class="o">-</span><span class="n">P</span> <span class="n">PORT</span><span class="p">,</span> <span class="c1">--port PORT  Flask server port</span>
+  <span class="o">-</span><span class="n">E</span> <span class="n">ENV</span><span class="p">,</span> <span class="c1">--env ENV     Flask environment</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="development">
+<h3>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h3>
+<p>The server-end code and client-end code are in two separate folders, namely, \ <span class="raw-html-m2r"><project-home></span>/mtv and \ <span class="raw-html-m2r"><project-home></span>/client.</p>
+<p>Run the following command for server-end development</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mtv run -E development -v
+</pre></div>
+</div>
+<p>Run the following command for client-end development</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> client
+$ gulp
+</pre></div>
+</div>
+</div>
+<div class="section" id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<p>to be added</p>
+</div>
+</div>
+<div class="section" id="production-deploy-with-docker">
+<h2>Production deploy with Docker<a class="headerlink" href="#production-deploy-with-docker" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Install <a class="reference external" href="https://docs.docker.com/install/">Docker</a> and <a class="reference external" href="https://docs.docker.com/compose/install/">Compose</a></p></li>
+<li><p>Initialize MongoDB folders</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make init-db
+</pre></div>
+</div>
+</li>
+<li><p>Restore data to the docker image “mongo:4.0” (here takes NASA data as example).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -o nasa.tar.bz2 <span class="s2">&quot;http://dongyu.name/data/nasa&quot;</span>
+$ tar -xvf nasa.tar.bz2 -C ./db-instance/dump/ <span class="o">&amp;&amp;</span> rm nasa.tar.bz2
+$ mv ./db-instance/dump/nasa ./db-instance/dump/mtv
+$ docker-compose -f docker-compose-db.yml up
+</pre></div>
+</div>
+<p>If you want to use your personal data, please unzip your data dumped from MongoDB to the folder <code class="docutils literal notranslate"><span class="pre">db-instance/dump/mtv/</span></code> and use the following command to restore data:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose -f docker-compose-db.yml up
+</pre></div>
+</div>
+</li>
+<li><p>Running up the application. Please check the file <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> under the ProjectRoot and make sure line 18 (<code class="docutils literal notranslate"><span class="pre">build:</span> <span class="pre">.</span></code>) is <strong>uncommented</strong> and line 17 (<code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">dyuliu/mtv</span></code>) is <strong>commented</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose up -d
+</pre></div>
+</div>
+<p>Your application should run on <strong>port 3000</strong> with the <a href="#id3"><span class="problematic" id="id4">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser to start your exploration.</p>
+</li>
+<li><p>Stopping the application</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose down
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="production-deploy-in-local-secure-environment">
+<h2>Production deploy in local secure environment<a class="headerlink" href="#production-deploy-in-local-secure-environment" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Install <a class="reference external" href="https://docs.docker.com/install/">Docker</a> and <a class="reference external" href="https://docs.docker.com/compose/install/">Compose</a></p></li>
+<li><p>Download MTV project and <strong>enter the project directory</strong></p></li>
+<li><p>Download required docker images and then load them by running the following commands. <strong>If you have installed MTV docker images before</strong>, please firstly run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-docker</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker load --input mtv.tar
+Loaded image: dyuliu/mtv:latest
+Loaded image: mongo:4.0
+</pre></div>
+</div>
+</li>
+<li><p>Restore data to the docker image “mongo:4.0”</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose -f docker-compose-db.yml up
+</pre></div>
+</div>
+</li>
+<li><p>Running up the application. Please check the file <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> under the ProjectRoot and make sure line 18 (<code class="docutils literal notranslate"><span class="pre">build:</span> <span class="pre">.</span></code>) is <strong>commented</strong> and line 17 (<code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">dyuliu/mtv</span></code>) is <strong>uncommented</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose up -d
+</pre></div>
+</div>
+<p>Your application should run on <strong>port 3000</strong> with the <a href="#id8"><span class="problematic" id="id9">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser to start your exploration.</p>
+</li>
+<li><p>Stopping the application</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose down
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="readme.html" class="btn btn-neutral float-right" title="MTV" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dongyu Liu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

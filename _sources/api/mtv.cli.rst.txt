@@ -1,0 +1,7 @@
+mtv.cli module
+==============
+
+.. automodule:: mtv.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:

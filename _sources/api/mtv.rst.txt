@@ -1,0 +1,26 @@
+mtv package
+===========
+
+.. automodule:: mtv
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+   mtv.controllers
+   mtv.data
+
+Submodules
+----------
+
+.. toctree::
+
+   mtv.cli
+   mtv.explorer
+   mtv.model
+   mtv.routes
+   mtv.utils

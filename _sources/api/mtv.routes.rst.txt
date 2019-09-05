@@ -1,0 +1,7 @@
+mtv.routes module
+=================
+
+.. automodule:: mtv.routes
+   :members:
+   :undoc-members:
+   :show-inheritance:

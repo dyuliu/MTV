@@ -1,0 +1,7 @@
+mtv.controllers.event module
+============================
+
+.. automodule:: mtv.controllers.event
+   :members:
+   :undoc-members:
+   :show-inheritance:

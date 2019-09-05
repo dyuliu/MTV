@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mtv.data.mdb &mdash; mtv 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> mtv
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#before-you-begin">Before You Begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#get-started">Get Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#downloading-mtv">Downloading MTV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#cloning-from-github">Cloning from Github</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#downloading-the-zip-file">Downloading the zip file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#quick-install">Quick Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#data">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#using-your-own-data">Using your own data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#running-your-application">Running Your Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#development">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#production-deploy-in-local-secure-environment">Production deploy in local secure environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#stable-release">Stable release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#from-source">From source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mtv.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/mtv.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.controllers.html">mtv.controllers package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/mtv.controllers.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.data.html">mtv.data package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/mtv.data.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/mtv.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.cli.html">mtv.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.explorer.html">mtv.explorer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.model.html">mtv.model module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.routes.html">mtv.routes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.utils.html">mtv.utils module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#types-of-contributions">Types of Contributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#report-bugs">Report Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#fix-bugs">Fix Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#implement-features">Implement Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#write-documentation">Write Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#submit-feedback">Submit Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#pull-request-guidelines">Pull Request Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#unit-testing-guidelines">Unit Testing Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#release-workflow">Release Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../authors.html">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../authors.html#development-lead">Development Lead</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../authors.html#contributors">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../history.html">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../history.html#id1">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">mtv</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>mtv.data.mdb</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for mtv.data.mdb</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
+
+<span class="kn">from</span> <span class="nn">pymongo</span> <span class="k">import</span> <span class="n">ASCENDING</span><span class="p">,</span> <span class="n">DESCENDING</span><span class="p">,</span> <span class="n">MongoClient</span>
+<span class="kn">from</span> <span class="nn">pymongo.errors</span> <span class="k">import</span> <span class="n">BulkWriteError</span>
+
+<span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="MongoDB"><a class="viewcode-back" href="../../../api/mtv.data.mdb.html#mtv.data.mdb.MongoDB">[docs]</a><span class="k">class</span> <span class="nc">MongoDB</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27017</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s1">&#39;mtv&#39;</span><span class="p">):</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="n">db</span><span class="p">]</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;connect to </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<div class="viewcode-block" id="MongoDB.read"><a class="viewcode-back" href="../../../api/mtv.data.mdb.html#mtv.data.mdb.MongoDB.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">():</span>
+            <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">docs</span></div>
+
+<div class="viewcode-block" id="MongoDB.writeCollection"><a class="viewcode-back" href="../../../api/mtv.data.mdb.html#mtv.data.mdb.MongoDB.writeCollection">[docs]</a>    <span class="k">def</span> <span class="nf">writeCollection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">insert_type</span><span class="o">=</span><span class="s1">&#39;many&#39;</span><span class="p">,</span>
+                        <span class="n">batch_num</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">bulk_type</span><span class="o">=</span><span class="s1">&#39;unordered&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;write data to specified collection</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        col : string. collection name</span>
+<span class="sd">        type : string. one, many, bulk</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">insert_type</span> <span class="o">==</span> <span class="s1">&#39;many&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input data type is not &quot;list&quot; or &quot;dict&quot; when execute </span><span class="se">\</span>
+<span class="s1">                    insert_many&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">insert_type</span> <span class="o">==</span> <span class="s1">&#39;one&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">insert_type</span> <span class="o">==</span> <span class="s1">&#39;bulk&#39;</span><span class="p">:</span>
+            <span class="n">bulk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_bulk</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">bulk_type</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+                    <span class="n">bulk</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">batch_num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="c1"># print (i)</span>
+                            <span class="n">bulk</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+                        <span class="k">except</span> <span class="n">BulkWriteError</span> <span class="k">as</span> <span class="n">bwe</span><span class="p">:</span>
+                            <span class="n">pprint</span><span class="p">(</span><span class="n">bwe</span><span class="o">.</span><span class="n">details</span><span class="p">)</span>
+                        <span class="n">bulk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_bulk</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">bulk_type</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">%</span> <span class="n">batch_num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">bulk</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+                <span class="k">except</span> <span class="n">BulkWriteError</span> <span class="k">as</span> <span class="n">bwe</span><span class="p">:</span>
+                    <span class="n">pprint</span><span class="p">(</span><span class="n">bwe</span><span class="o">.</span><span class="n">details</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MongoDB.new_bulk"><a class="viewcode-back" href="../../../api/mtv.data.mdb.html#mtv.data.mdb.MongoDB.new_bulk">[docs]</a>    <span class="k">def</span> <span class="nf">new_bulk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">bulk_type</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">bulk_type</span> <span class="o">==</span> <span class="s1">&#39;unordered&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">initialize_unordered_bulk_op</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">initialize_ordered_bulk_op</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="MongoDB.createIndex"><a class="viewcode-back" href="../../../api/mtv.data.mdb.html#mtv.data.mdb.MongoDB.createIndex">[docs]</a>    <span class="k">def</span> <span class="nf">createIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">indexes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="n">ASCENDING</span> <span class="k">if</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span> <span class="k">else</span> <span class="n">DESCENDING</span>
+            <span class="n">indexes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">order</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">create_index</span><span class="p">(</span><span class="n">indexes</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="n">unique</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;create index successfully on collection &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">col</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="MongoDB.del_col"><a class="viewcode-back" href="../../../api/mtv.data.mdb.html#mtv.data.mdb.MongoDB.del_col">[docs]</a>    <span class="k">def</span> <span class="nf">del_col</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="MongoDB.move_col"><a class="viewcode-back" href="../../../api/mtv.data.mdb.html#mtv.data.mdb.MongoDB.move_col">[docs]</a>    <span class="k">def</span> <span class="nf">move_col</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">des_db</span><span class="p">,</span> <span class="n">des_col</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#item:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">))</span>
+
+        <span class="n">w_conn</span> <span class="o">=</span> <span class="n">MongoDB</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27018</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">des_db</span><span class="p">)</span>
+        <span class="n">w_conn</span><span class="o">.</span><span class="n">writeCollection</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">des_col</span><span class="p">,</span> <span class="n">insert_type</span><span class="o">=</span><span class="s1">&#39;bulk&#39;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dongyu Liu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
