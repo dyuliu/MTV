@@ -1,0 +1,22 @@
+mtv.resources package
+=====================
+
+.. automodule:: mtv.resources
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+
+   mtv.resources.comment
+   mtv.resources.data
+   mtv.resources.datarun
+   mtv.resources.dataset
+   mtv.resources.event
+   mtv.resources.experiment
+   mtv.resources.pipeline
+   mtv.resources.signal
+   mtv.resources.test

@@ -11,8 +11,8 @@ Subpackages
 
 .. toctree::
 
-   mtv.controllers
-   mtv.data
+   mtv.db
+   mtv.resources
 
 Submodules
 ----------

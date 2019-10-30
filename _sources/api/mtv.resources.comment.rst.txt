@@ -1,0 +1,7 @@
+mtv.resources.comment module
+============================
+
+.. automodule:: mtv.resources.comment
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -88,13 +88,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#quick-install">Quick Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#data">Data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../readme.html#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../readme.html#using-your-own-data">Using your own data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#downloading-the-demo-data">Downloading the demo data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#working-with-orion-to-generate-your-own-data">Working with Orion to generate your own data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#running-your-application">Running Your Application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#development">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../readme.html#testing">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
@@ -112,12 +111,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../api/mtv.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api/mtv.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.controllers.html">mtv.controllers package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.controllers.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.db.html">mtv.db package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.db.html#submodules">Submodules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.data.html">mtv.data package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.data.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.resources.html">mtv.resources package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.resources.html#submodules">Submodules</a></li>
 </ul>
 </li>
 </ul>
@@ -227,28 +226,32 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">flask_cors</span> <span class="k">import</span> <span class="n">CORS</span>
 <span class="kn">from</span> <span class="nn">gevent.pywsgi</span> <span class="k">import</span> <span class="n">WSGIServer</span>
+<span class="kn">from</span> <span class="nn">gridfs</span> <span class="k">import</span> <span class="n">GridFS</span>
 <span class="kn">from</span> <span class="nn">mongoengine</span> <span class="k">import</span> <span class="n">connect</span>
+<span class="kn">from</span> <span class="nn">pymongo</span> <span class="k">import</span> <span class="n">MongoClient</span>
 <span class="kn">from</span> <span class="nn">termcolor</span> <span class="k">import</span> <span class="n">colored</span>
 
-<span class="kn">from</span> <span class="nn">mtv.data.mdb</span> <span class="k">import</span> <span class="n">MongoDB</span>
-<span class="kn">from</span> <span class="nn">mtv.data.processor</span> <span class="k">import</span> <span class="n">to_mongo_docs</span>
+<span class="kn">from</span> <span class="nn">mtv.db</span> <span class="k">import</span> <span class="n">db</span>
 <span class="kn">from</span> <span class="nn">mtv.routes</span> <span class="k">import</span> <span class="n">add_routes</span>
-<span class="kn">from</span> <span class="nn">mtv.utils</span> <span class="k">import</span> <span class="n">get_files</span><span class="p">,</span> <span class="n">import_object</span>
+<span class="kn">from</span> <span class="nn">mtv.utils</span> <span class="k">import</span> <span class="n">import_object</span>
 
 <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="MTVExplorer"><a class="viewcode-back" href="../../api/mtv.explorer.html#mtv.explorer.MTVExplorer">[docs]</a><span class="k">class</span> <span class="nc">MTVExplorer</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cf</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">docker</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cf</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">],</span> <span class="n">host</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">],</span> <span class="n">port</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">],</span>
-                           <span class="n">username</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span> <span class="n">password</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">docker</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">],</span> <span class="n">host</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">],</span> <span class="n">port</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">],</span>
+                               <span class="n">username</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span> <span class="n">password</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;dk_db&#39;</span><span class="p">],</span> <span class="n">host</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;dk_host&#39;</span><span class="p">],</span> <span class="n">port</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;dk_port&#39;</span><span class="p">],</span>
+                               <span class="n">username</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;dk_username&#39;</span><span class="p">],</span> <span class="n">password</span><span class="o">=</span><span class="n">cf</span><span class="p">[</span><span class="s1">&#39;dk_password&#39;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">_init_flask_app</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">):</span>
         <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span>
@@ -274,6 +277,22 @@
         <span class="n">add_routes</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">app</span>
+
+<div class="viewcode-block" id="MTVExplorer.update_db"><a class="viewcode-back" href="../../api/mtv.explorer.html#mtv.explorer.MTVExplorer.update_db">[docs]</a>    <span class="k">def</span> <span class="nf">update_db</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># copy from orion</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">copy_from</span><span class="p">(</span>
+            <span class="n">fromdb</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;or_db&#39;</span><span class="p">],</span>
+            <span class="n">todb</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">],</span>
+            <span class="n">fromhost</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;or_host&#39;</span><span class="p">],</span>
+            <span class="n">fromport</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;or_port&#39;</span><span class="p">],</span>
+            <span class="n">tohost</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">],</span>
+            <span class="n">toport</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># update col &quot;prediction&quot; and &quot;raw&quot;</span>
+        <span class="n">db_cli</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;or_host&#39;</span><span class="p">],</span> <span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;or_port&#39;</span><span class="p">])</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">update_db</span><span class="p">(</span><span class="n">GridFS</span><span class="p">(</span><span class="n">db_cli</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;or_db&#39;</span><span class="p">]]))</span></div>
 
 <div class="viewcode-block" id="MTVExplorer.run_server"><a class="viewcode-back" href="../../api/mtv.explorer.html#mtv.explorer.MTVExplorer.run_server">[docs]</a>    <span class="k">def</span> <span class="nf">run_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
 
@@ -311,56 +330,7 @@
             <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">LOGGER</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Error running the module &#39;</span><span class="si">{}</span><span class="s2">&#39;: </span><span class="si">{}</span><span class="s2">&quot;</span>
-                             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span></div>
-
-<div class="viewcode-block" id="MTVExplorer.add_aggdata"><a class="viewcode-back" href="../../api/mtv.explorer.html#mtv.explorer.MTVExplorer.add_aggdata">[docs]</a>    <span class="k">def</span> <span class="nf">add_aggdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">time_column</span><span class="p">,</span>
-                    <span class="n">value_column</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
-        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;time_column: </span><span class="si">{}</span><span class="s2">, value_columne: </span><span class="si">{}</span><span class="s2">, header: </span><span class="si">{}</span><span class="s2">&quot;</span>
-                     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_column</span><span class="p">,</span> <span class="n">value_column</span><span class="p">,</span> <span class="n">header</span><span class="p">))</span>
-
-        <span class="n">conn</span> <span class="o">=</span> <span class="n">MongoDB</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">],</span> <span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">],</span>
-                       <span class="n">db</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cf</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">])</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-            <span class="n">LOGGER</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Data folder path &quot;</span><span class="si">{}</span><span class="s1">&quot; does not exist&#39;</span>
-                             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-            <span class="k">raise</span>
-
-        <span class="n">files</span> <span class="o">=</span> <span class="n">get_files</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">: Processing </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">),</span> <span class="n">file</span><span class="p">))</span>
-
-            <span class="c1"># timestamp, value</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">header</span><span class="p">):</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s1">&#39;infer&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-                <span class="n">columns</span> <span class="o">=</span> <span class="p">{</span>
-                    <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">time_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-                    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">value_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-                <span class="p">}</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="p">)[[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]]</span>
-
-            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start</span><span class="p">:]</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">stop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="n">stop</span><span class="p">]</span>
-
-            <span class="n">docs</span> <span class="o">=</span> <span class="n">to_mongo_docs</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">data</span><span class="p">,</span> <span class="n">interval</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">docs</span><span class="p">:</span>
-                <span class="n">conn</span><span class="o">.</span><span class="n">writeCollection</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
-
-        <span class="n">conn</span><span class="o">.</span><span class="n">createIndex</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">)],</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">conn</span><span class="o">.</span><span class="n">createIndex</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">)])</span></div></div>
+                             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span></div></div>
 </pre></div>
 
            </div>

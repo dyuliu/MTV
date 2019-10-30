@@ -90,13 +90,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#quick-install">Quick Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data">Data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-your-own-data">Using your own data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#downloading-the-demo-data">Downloading the demo data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-orion-to-generate-your-own-data">Working with Orion to generate your own data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#running-your-application">Running Your Application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#development">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#production-deploy-with-docker">Production deploy with Docker</a></li>
@@ -114,12 +113,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api/mtv.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/mtv.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/mtv.controllers.html">mtv.controllers package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/mtv.controllers.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.db.html">mtv.db package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mtv.db.html#submodules">Submodules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/mtv.data.html">mtv.data package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/mtv.data.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mtv.resources.html">mtv.resources package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mtv.resources.html#submodules">Submodules</a></li>
 </ul>
 </li>
 </ul>
@@ -237,6 +236,7 @@
 <div class="section" id="mtv">
 <h1>MTV<a class="headerlink" href="#mtv" title="Permalink to this headline">¶</a></h1>
 <p><strong>MTV</strong> is a visual analytics system built for anomaly analysis of multiple time-series data.</p>
+<p>The Restful APIs documentation: <a class="reference external" href="http://45.77.5.58/apidoc/">http://45.77.5.58/apidoc/</a></p>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/HDI-Project/MTV/blob/master/LICENSE">The MIT License</a></p>
@@ -303,17 +303,19 @@ $ make install-theme
 </div>
 <div class="section" id="data">
 <h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="downloading-the-nasa-public-data-for-demo">
-<h4>Downloading the NASA public data for demo<a class="headerlink" href="#downloading-the-nasa-public-data-for-demo" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make init-db
-$ make load-db-nasa
+<div class="section" id="downloading-the-demo-data">
+<h4>Downloading the demo data<a class="headerlink" href="#downloading-the-demo-data" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make load-db-mtv
 </pre></div>
 </div>
 <p>This will download and restore the dataset into MongoDB.</p>
 </div>
-<div class="section" id="using-your-own-data">
-<h4>Using your own data<a class="headerlink" href="#using-your-own-data" title="Permalink to this headline">¶</a></h4>
-<p>You have to create a database with the name <strong>“mtv”</strong> in MongoDB. For the detailed data format in the database, you can refer to the demo data after executing the aforementioned command.</p>
+<div class="section" id="working-with-orion-to-generate-your-own-data">
+<h4>Working with Orion to generate your own data<a class="headerlink" href="#working-with-orion-to-generate-your-own-data" title="Permalink to this headline">¶</a></h4>
+<p>Once the required data is generated using Orion, you simple type the following command to sync the data from Orion to MTV. Note that you can configure the mongodb in the file <code class="docutils literal notranslate"><span class="pre">./mtv/config.yaml</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mtv update db -v
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="running-your-application">
@@ -322,22 +324,21 @@ $ make load-db-nasa
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mtv run -v
 </pre></div>
 </div>
-<p>Your application should run on <strong>port 3000</strong> with the <a href="#id1"><span class="problematic" id="id2">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser. The following list the optional arguments for <code class="docutils literal notranslate"><span class="pre">mtv</span> <span class="pre">run</span></code></p>
+<p>Your application should run on <strong>port 3000</strong> with the <a href="#id1"><span class="problematic" id="id2">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser (Chrome). The following list the optional arguments for <code class="docutils literal notranslate"><span class="pre">mtv</span> <span class="pre">run</span></code></p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="k">usage</span><span class="p">:</span> <span class="n">mtv</span> <span class="n">run</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span> <span class="n">LOGFILE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">P</span> <span class="n">PORT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">E</span> <span class="n">ENV</span><span class="p">]</span>
 
 <span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
-  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="c1">--help            show this help message and exit</span>
-  <span class="o">-</span><span class="n">l</span> <span class="n">LOGFILE</span><span class="p">,</span> <span class="c1">--logfile LOGFILE</span>
-                        <span class="n">Name</span> <span class="k">of</span> <span class="n">the</span> <span class="n">logfile</span><span class="p">.</span> <span class="k">If</span> <span class="k">not</span> <span class="n">given</span><span class="p">,</span> <span class="n">log</span> <span class="k">to</span> <span class="k">stdout</span><span class="p">.</span>
-  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="c1">--verbose         Be verbose. Use -vv for increased verbosity.</span>
-  <span class="o">-</span><span class="n">P</span> <span class="n">PORT</span><span class="p">,</span> <span class="c1">--port PORT  Flask server port</span>
-  <span class="o">-</span><span class="n">E</span> <span class="n">ENV</span><span class="p">,</span> <span class="c1">--env ENV     Flask environment</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="c1">--help             show this help message and exit</span>
+  <span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="c1">--logfile LOGFILE  Name of the logfile. If not given, log to stdout.</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="c1">--verbose          Be verbose. Use -vv for increased verbosity.</span>
+  <span class="o">-</span><span class="n">P</span> <span class="n">PORT</span><span class="p">,</span> <span class="c1">--port PORT   Flask server port</span>
+  <span class="o">-</span><span class="n">E</span> <span class="n">ENV</span><span class="p">,</span> <span class="c1">--env ENV      Flask environment</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="development">
 <h3>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h3>
-<p>The server-end code and client-end code are in two separate folders, namely, \ <span class="raw-html-m2r"><project-home></span>/mtv and \ <span class="raw-html-m2r"><project-home></span>/client.</p>
+<p>The server-end code and client-end code are in two separate folders, namely,<code class="docutils literal notranslate"><span class="pre">&lt;project-home&gt;/mtv</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;project-home&gt;/client</span></code></p>
 <p>Run the following command for server-end development</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mtv run -E development -v
 </pre></div>
@@ -348,40 +349,30 @@ $ gulp
 </pre></div>
 </div>
 </div>
-<div class="section" id="testing">
-<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
-<p>to be added</p>
-</div>
 </div>
 <div class="section" id="production-deploy-with-docker">
 <h2>Production deploy with Docker<a class="headerlink" href="#production-deploy-with-docker" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Install <a class="reference external" href="https://docs.docker.com/install/">Docker</a> and <a class="reference external" href="https://docs.docker.com/compose/install/">Compose</a></p></li>
-<li><p>Initialize MongoDB folders</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make init-db
+<li><p>Load data into the mongo container</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make docker-db-up
 </pre></div>
 </div>
 </li>
-<li><p>Restore data to the docker image “mongo:4.0” (here takes NASA data as example).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -o nasa.tar.bz2 <span class="s2">&quot;http://dongyu.name/data/nasa&quot;</span>
-$ tar -xvf nasa.tar.bz2 -C ./db-instance/dump/ <span class="o">&amp;&amp;</span> rm nasa.tar.bz2
-$ mv ./db-instance/dump/nasa ./db-instance/dump/mtv
-$ docker-compose -f docker-compose-db.yml up
-</pre></div>
-</div>
-<p>If you want to use your personal data, please unzip your data dumped from MongoDB to the folder <code class="docutils literal notranslate"><span class="pre">db-instance/dump/mtv/</span></code> and use the following command to restore data:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose -f docker-compose-db.yml up
-</pre></div>
-</div>
-</li>
-<li><p>Running up the application. Please check the file <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> under the ProjectRoot and make sure line 18 (<code class="docutils literal notranslate"><span class="pre">build:</span> <span class="pre">.</span></code>) is <strong>uncommented</strong> and line 17 (<code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">dyuliu/mtv</span></code>) is <strong>commented</strong>.</p>
+<li><p>Run the application</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose up -d
 </pre></div>
 </div>
-<p>Your application should run on <strong>port 3000</strong> with the <a href="#id3"><span class="problematic" id="id4">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser to start your exploration.</p>
+<p>The application should be successfully running on <strong>port 3000</strong> using the <strong>production</strong> environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your chrome browser to start your exploration.</p>
+<p><strong>Note:</strong> if MTV is deployed in a remote server, please change the variable <code class="docutils literal notranslate"><span class="pre">server</span></code> in <code class="docutils literal notranslate"><span class="pre">.client/src/config.ts</span></code> to the server IP address with right port.</p>
 </li>
-<li><p>Stopping the application</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose down
+<li><p>Stop the application</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose stop
+</pre></div>
+</div>
+</li>
+<li><p>Remove the related containers and volumes (optional step)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose down -v
 </pre></div>
 </div>
 </li>
@@ -391,27 +382,27 @@ $ docker-compose -f docker-compose-db.yml up
 <h2>Production deploy in local secure environment<a class="headerlink" href="#production-deploy-in-local-secure-environment" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Install <a class="reference external" href="https://docs.docker.com/install/">Docker</a> and <a class="reference external" href="https://docs.docker.com/compose/install/">Compose</a></p></li>
-<li><p>Download MTV project and <strong>enter the project directory</strong></p></li>
-<li><p>Download required docker images and then load them by running the following commands. <strong>If you have installed MTV docker images before</strong>, please firstly run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-docker</span></code>.</p>
+<li><p>Download MTV project and put the MTV docker image into the project direction</p></li>
+<li><p>Enter the MTV folder and install the docker image by running</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker load --input mtv.tar
 Loaded image: dyuliu/mtv:latest
 Loaded image: mongo:4.0
 </pre></div>
 </div>
 </li>
-<li><p>Restore data to the docker image “mongo:4.0”</p>
+<li><p>Restore data back to database running on mongo:4.0 container</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose -f docker-compose-db.yml up
 </pre></div>
 </div>
 </li>
-<li><p>Running up the application. Please check the file <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> under the ProjectRoot and make sure line 18 (<code class="docutils literal notranslate"><span class="pre">build:</span> <span class="pre">.</span></code>) is <strong>commented</strong> and line 17 (<code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">dyuliu/mtv</span></code>) is <strong>uncommented</strong>.</p>
+<li><p>Run the application. Please check the file <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> and make sure line 18 (<code class="docutils literal notranslate"><span class="pre">build:</span> <span class="pre">.</span></code>) is <strong>commented</strong> and line 17 (<code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">dyuliu/mtv</span></code>) is <strong>uncommented</strong>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose up -d
 </pre></div>
 </div>
-<p>Your application should run on <strong>port 3000</strong> with the <a href="#id8"><span class="problematic" id="id9">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser to start your exploration.</p>
+<p>Your application should run on <strong>port 3000</strong> with the <a href="#id6"><span class="problematic" id="id7">**</span></a><em>production</em>** environment by default. Just go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> in your browser to start your exploration.</p>
 </li>
-<li><p>Stopping the application</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose down
+<li><p>Stop the application</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker-compose stop
 </pre></div>
 </div>
 </li>

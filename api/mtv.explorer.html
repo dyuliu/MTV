@@ -90,13 +90,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../readme.html#quick-install">Quick Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../readme.html#data">Data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../readme.html#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../readme.html#using-your-own-data">Using your own data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readme.html#downloading-the-demo-data">Downloading the demo data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readme.html#working-with-orion-to-generate-your-own-data">Working with Orion to generate your own data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../readme.html#running-your-application">Running Your Application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../readme.html#development">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../readme.html#testing">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
@@ -114,12 +113,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="mtv.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mtv.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mtv.controllers.html">mtv.controllers package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mtv.controllers.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtv.db.html">mtv.db package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mtv.db.html#submodules">Submodules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="mtv.data.html">mtv.data package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mtv.data.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtv.resources.html">mtv.resources package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mtv.resources.html#submodules">Submodules</a></li>
 </ul>
 </li>
 </ul>
@@ -234,13 +233,8 @@
 <span id="mtv-explorer-module"></span><h1>mtv.explorer module<a class="headerlink" href="#module-mtv.explorer" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mtv.explorer.MTVExplorer">
-<em class="property">class </em><code class="sig-prename descclassname">mtv.explorer.</code><code class="sig-name descname">MTVExplorer</code><span class="sig-paren">(</span><em class="sig-param">cf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mtv/explorer.html#MTVExplorer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mtv.explorer.MTVExplorer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mtv.explorer.</code><code class="sig-name descname">MTVExplorer</code><span class="sig-paren">(</span><em class="sig-param">cf</em>, <em class="sig-param">docker</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mtv/explorer.html#MTVExplorer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mtv.explorer.MTVExplorer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="mtv.explorer.MTVExplorer.add_aggdata">
-<code class="sig-name descname">add_aggdata</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">col</em>, <em class="sig-param">start</em>, <em class="sig-param">stop</em>, <em class="sig-param">time_column</em>, <em class="sig-param">value_column</em>, <em class="sig-param">header</em>, <em class="sig-param">interval</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mtv/explorer.html#MTVExplorer.add_aggdata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mtv.explorer.MTVExplorer.add_aggdata" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="method">
 <dt id="mtv.explorer.MTVExplorer.run_module">
 <code class="sig-name descname">run_module</code><span class="sig-paren">(</span><em class="sig-param">module</em>, <em class="sig-param">args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mtv/explorer.html#MTVExplorer.run_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mtv.explorer.MTVExplorer.run_module" title="Permalink to this definition">¶</a></dt>
@@ -249,6 +243,11 @@
 <dl class="method">
 <dt id="mtv.explorer.MTVExplorer.run_server">
 <code class="sig-name descname">run_server</code><span class="sig-paren">(</span><em class="sig-param">env</em>, <em class="sig-param">port</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mtv/explorer.html#MTVExplorer.run_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mtv.explorer.MTVExplorer.run_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mtv.explorer.MTVExplorer.update_db">
+<code class="sig-name descname">update_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mtv/explorer.html#MTVExplorer.update_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mtv.explorer.MTVExplorer.update_db" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

@@ -1,0 +1,7 @@
+mtv.resources.pipeline module
+=============================
+
+.. automodule:: mtv.resources.pipeline
+   :members:
+   :undoc-members:
+   :show-inheritance:

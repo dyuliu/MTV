@@ -1,0 +1,7 @@
+mtv.resources.event module
+==========================
+
+.. automodule:: mtv.resources.event
+   :members:
+   :undoc-members:
+   :show-inheritance:

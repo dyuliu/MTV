@@ -1,0 +1,7 @@
+mtv.resources.dataset module
+============================
+
+.. automodule:: mtv.resources.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:

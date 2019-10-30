@@ -88,13 +88,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#quick-install">Quick Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#data">Data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../readme.html#downloading-the-nasa-public-data-for-demo">Downloading the NASA public data for demo</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../readme.html#using-your-own-data">Using your own data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#downloading-the-demo-data">Downloading the demo data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../readme.html#working-with-orion-to-generate-your-own-data">Working with Orion to generate your own data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#running-your-application">Running Your Application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../readme.html#development">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../readme.html#testing">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
@@ -112,12 +111,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../api/mtv.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api/mtv.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.controllers.html">mtv.controllers package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.controllers.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.db.html">mtv.db package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.db.html#submodules">Submodules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.data.html">mtv.data package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.data.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/mtv.resources.html">mtv.resources package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mtv.resources.html#submodules">Submodules</a></li>
 </ul>
 </li>
 </ul>
@@ -226,7 +225,7 @@
 <span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">render_template</span>
 <span class="kn">from</span> <span class="nn">flask_restful</span> <span class="k">import</span> <span class="n">Api</span>
 
-<span class="kn">import</span> <span class="nn">mtv.controllers</span> <span class="k">as</span> <span class="nn">ctrl</span>
+<span class="kn">import</span> <span class="nn">mtv.resources</span> <span class="k">as</span> <span class="nn">ctrl</span>
 
 
 <div class="viewcode-block" id="add_routes"><a class="viewcode-back" href="../../api/mtv.routes.html#mtv.routes.add_routes">[docs]</a><span class="k">def</span> <span class="nf">add_routes</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
@@ -240,34 +239,38 @@
     <span class="c1"># configure RESTful APIs</span>
     <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span>
-        <span class="n">ctrl</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span>
-        <span class="s1">&#39;/api/v1/datasets/&lt;string:dataset&gt;/&#39;</span><span class="p">)</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">Datasets</span><span class="p">,</span> <span class="s1">&#39;/api/v1/datasets/&#39;</span><span class="p">)</span>
-
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span>
-        <span class="n">ctrl</span><span class="o">.</span><span class="n">datarun</span><span class="o">.</span><span class="n">Datarun</span><span class="p">,</span>
-        <span class="s1">&#39;/api/v1/dataruns/&lt;string:datarun&gt;/&#39;</span><span class="p">)</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">datarun</span><span class="o">.</span><span class="n">Dataruns</span><span class="p">,</span> <span class="s1">&#39;/api/v1/dataruns/&#39;</span><span class="p">)</span>
-
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">,</span>
-                     <span class="s1">&#39;/api/v1/pipelines/&lt;string:pipeline&gt;/&#39;</span><span class="p">)</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipelines</span><span class="p">,</span> <span class="s1">&#39;/api/v1/pipelines/&#39;</span><span class="p">)</span>
-
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">Event</span><span class="p">,</span> <span class="s1">&#39;/api/v1/events/&lt;string:event&gt;/&#39;</span><span class="p">)</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">Events</span><span class="p">,</span> <span class="s1">&#39;/api/v1/events/&#39;</span><span class="p">)</span>
-
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span>
-        <span class="n">ctrl</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="n">Comment</span><span class="p">,</span>
-        <span class="s1">&#39;/api/v1/comments/&lt;string:comment&gt;/&#39;</span><span class="p">)</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="n">Comments</span><span class="p">,</span> <span class="s1">&#39;/api/v1/comments/&#39;</span><span class="p">)</span>
-
     <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Data</span><span class="p">,</span> <span class="s1">&#39;/api/v1/data/&#39;</span><span class="p">)</span>
 
+    <span class="c1"># comment</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="n">Comment</span><span class="p">,</span> <span class="s1">&#39;/api/v1/comments/&lt;string:comment_id&gt;/&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="n">Comments</span><span class="p">,</span> <span class="s1">&#39;/api/v1/comments/&#39;</span><span class="p">)</span>
+
+    <span class="c1"># datarun</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">datarun</span><span class="o">.</span><span class="n">Datarun</span><span class="p">,</span> <span class="s1">&#39;/api/v1/dataruns/&lt;string:datarun_id&gt;/&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">datarun</span><span class="o">.</span><span class="n">Dataruns</span><span class="p">,</span> <span class="s1">&#39;/api/v1/dataruns/&#39;</span><span class="p">)</span>
+
+    <span class="c1"># dataset</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="s1">&#39;/api/v1/datasets/&lt;string:dataset_name&gt;/&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">Datasets</span><span class="p">,</span> <span class="s1">&#39;/api/v1/datasets/&#39;</span><span class="p">)</span>
+
+    <span class="c1"># event</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">Event</span><span class="p">,</span> <span class="s1">&#39;/api/v1/events/&lt;string:event_id&gt;/&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">Events</span><span class="p">,</span> <span class="s1">&#39;/api/v1/events/&#39;</span><span class="p">)</span>
+
     <span class="c1"># experiment</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">Experiment</span><span class="p">,</span>
-                     <span class="s1">&#39;/api/v1/experiments/&lt;string:experiment&gt;/&#39;</span><span class="p">)</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">Experiments</span><span class="p">,</span> <span class="s1">&#39;/api/v1/experiments/&#39;</span><span class="p">)</span></div>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">Experiment</span><span class="p">,</span> <span class="s1">&#39;/api/v1/experiments/&lt;string:experiment_id&gt;/&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">Experiments</span><span class="p">,</span> <span class="s1">&#39;/api/v1/experiments/&#39;</span><span class="p">)</span>
+
+    <span class="c1"># pipeline</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">,</span> <span class="s1">&#39;/api/v1/pipelines/&lt;string:pipeline_name&gt;/&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipelines</span><span class="p">,</span> <span class="s1">&#39;/api/v1/pipelines/&#39;</span><span class="p">)</span>
+
+    <span class="c1"># signal</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">Signal</span><span class="p">,</span> <span class="s1">&#39;/api/v1/signals/&lt;string:signal_name&gt;/&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">Signals</span><span class="p">,</span> <span class="s1">&#39;/api/v1/signals/&#39;</span><span class="p">)</span>
+
+    <span class="c1"># test</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ctrl</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">Test</span><span class="p">,</span> <span class="s1">&#39;/api/v1/test/&#39;</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

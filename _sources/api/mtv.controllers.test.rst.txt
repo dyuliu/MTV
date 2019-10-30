@@ -1,7 +1,0 @@
-mtv.controllers.test module
-===========================
-
-.. automodule:: mtv.controllers.test
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-mtv.controllers.pipeline module
-===============================
-
-.. automodule:: mtv.controllers.pipeline
-   :members:
-   :undoc-members:
-   :show-inheritance:

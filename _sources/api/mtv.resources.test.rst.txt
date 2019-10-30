@@ -1,0 +1,7 @@
+mtv.resources.test module
+=========================
+
+.. automodule:: mtv.resources.test
+   :members:
+   :undoc-members:
+   :show-inheritance:

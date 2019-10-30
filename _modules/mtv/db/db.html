@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mtv.db.db &mdash; mtv 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> mtv
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#before-you-begin">Before You Begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#get-started">Get Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#downloading-mtv">Downloading MTV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#cloning-from-github">Cloning from Github</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#downloading-the-zip-file">Downloading the zip file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#quick-install">Quick Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#data">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#downloading-the-demo-data">Downloading the demo data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#working-with-orion-to-generate-your-own-data">Working with Orion to generate your own data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#running-your-application">Running Your Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#development">Development</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#production-deploy-with-docker">Production deploy with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#production-deploy-in-local-secure-environment">Production deploy in local secure environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#stable-release">Stable release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#from-source">From source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mtv.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/mtv.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.db.html">mtv.db package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/mtv.db.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.resources.html">mtv.resources package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/mtv.resources.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/mtv.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.cli.html">mtv.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.explorer.html">mtv.explorer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.model.html">mtv.model module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.routes.html">mtv.routes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/mtv.utils.html">mtv.utils module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#types-of-contributions">Types of Contributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#report-bugs">Report Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#fix-bugs">Fix Bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#implement-features">Implement Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#write-documentation">Write Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#submit-feedback">Submit Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#pull-request-guidelines">Pull Request Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#unit-testing-guidelines">Unit Testing Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#release-workflow">Release Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../authors.html">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../authors.html#development-lead">Development Lead</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../authors.html#contributors">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../history.html">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../history.html#id1">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">mtv</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>mtv.db.db</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for mtv.db.db</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">from</span> <span class="nn">calendar</span> <span class="k">import</span> <span class="n">monthrange</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pymongo</span> <span class="k">import</span> <span class="n">MongoClient</span>
+
+<span class="kn">from</span> <span class="nn">mtv</span> <span class="k">import</span> <span class="n">model</span>
+
+<span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># private methods</span>
+
+
+<span class="k">def</span> <span class="nf">_inverse_scale_transform</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; return the original value after applying linear scale (a0, b0)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        v (float): the value after transformation</span>
+<span class="sd">        a0 (float): min of the values after transformation</span>
+<span class="sd">        b0 (float): max of the values after transformation</span>
+<span class="sd">        a1 (float): min of the original values</span>
+<span class="sd">        b1 (float): max of the original values</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: the original value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">b0</span> <span class="o">-</span> <span class="n">a0</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">a0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">b0</span> <span class="o">-</span> <span class="n">a0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">b1</span> <span class="o">-</span> <span class="n">a1</span><span class="p">)</span> <span class="o">+</span> <span class="n">a1</span>
+
+
+<div class="viewcode-block" id="copy_from"><a class="viewcode-back" href="../../../api/mtv.db.db.html#mtv.db.db.copy_from">[docs]</a><span class="k">def</span> <span class="nf">copy_from</span><span class="p">(</span><span class="n">fromdb</span><span class="p">,</span> <span class="n">todb</span><span class="p">,</span> <span class="n">fromhost</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">fromport</span><span class="o">=</span><span class="mi">27017</span><span class="p">,</span>
+              <span class="n">tohost</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">toport</span><span class="o">=</span><span class="mi">27017</span><span class="p">):</span>
+    <span class="n">to_client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">tohost</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">toport</span><span class="p">)</span>
+    <span class="n">from_client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">fromhost</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">fromport</span><span class="p">)</span>
+
+    <span class="n">cnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;comment&#39;</span><span class="p">,</span> <span class="s1">&#39;datarun&#39;</span><span class="p">,</span> <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;experiment&#39;</span><span class="p">,</span> <span class="s1">&#39;pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;signal&#39;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="n">cnames</span><span class="p">:</span>
+        <span class="n">to_col</span> <span class="o">=</span> <span class="n">to_client</span><span class="p">[</span><span class="n">todb</span><span class="p">][</span><span class="n">cname</span><span class="p">]</span>
+        <span class="n">from_col</span> <span class="o">=</span> <span class="n">from_client</span><span class="p">[</span><span class="n">fromdb</span><span class="p">][</span><span class="n">cname</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">from_col</span><span class="o">.</span><span class="n">find</span><span class="p">({}):</span>
+            <span class="c1"># copy new document</span>
+            <span class="k">if</span> <span class="n">to_col</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;_id&#39;</span><span class="p">]})</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">to_col</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">d</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="copy_from2"><a class="viewcode-back" href="../../../api/mtv.db.db.html#mtv.db.db.copy_from2">[docs]</a><span class="k">def</span> <span class="nf">copy_from2</span><span class="p">(</span><span class="n">fromdb</span><span class="p">,</span> <span class="n">todb</span><span class="p">,</span> <span class="n">fromhost</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">fromport</span><span class="o">=</span><span class="mi">27017</span><span class="p">,</span>
+               <span class="n">tohost</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">toport</span><span class="o">=</span><span class="mi">27017</span><span class="p">):</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">tohost</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">toport</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;copydb&#39;</span><span class="p">,</span> <span class="n">fromdb</span><span class="o">=</span><span class="n">fromdb</span><span class="p">,</span> <span class="n">todb</span><span class="o">=</span><span class="n">todb</span><span class="p">,</span> <span class="n">fromhost</span><span class="o">=</span><span class="n">fromhost</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="update_db"><a class="viewcode-back" href="../../../api/mtv.db.db.html#mtv.db.db.update_db">[docs]</a><span class="k">def</span> <span class="nf">update_db</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+    <span class="c1"># get datarun list</span>
+    <span class="n">dataruns</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Datarun</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+    <span class="n">cc</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">dataruns</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+    <span class="c1"># updated by dataruns</span>
+    <span class="k">for</span> <span class="n">datarun</span> <span class="ow">in</span> <span class="n">dataruns</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cc</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">: Processing datarun </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">datarun</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+
+            <span class="c1"># ------ Handle prediction -------- #</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Prediction</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">datarun</span><span class="o">=</span><span class="n">datarun</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="k">continue</span>
+
+            <span class="n">v</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">grid_out</span> <span class="ow">in</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;datarun_id&#39;</span><span class="p">:</span> <span class="n">datarun</span><span class="o">.</span><span class="n">id</span><span class="p">},</span> <span class="n">no_cursor_timeout</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                <span class="n">v</span><span class="p">[</span><span class="n">grid_out</span><span class="o">.</span><span class="n">variable</span><span class="p">]</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">grid_out</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+            <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+            <span class="n">nm_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_nm&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_nm&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">raw_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_raw&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_raw&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+            <span class="c1"># the first window does not have prediction values</span>
+            <span class="c1"># fill the first window with the original values</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">]):</span>
+                <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="s1">&#39;target_index&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">break</span>
+
+                <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
+                    <span class="nb">float</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span>
+                    <span class="n">_inverse_scale_transform</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_nm&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">nm_range</span><span class="p">,</span> <span class="o">*</span><span class="n">raw_range</span><span class="p">),</span>
+                    <span class="n">_inverse_scale_transform</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_nm&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">nm_range</span><span class="p">,</span> <span class="o">*</span><span class="n">raw_range</span><span class="p">),</span>
+                    <span class="mf">0.0</span><span class="p">,</span>
+                    <span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_nm&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_nm&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="mf">0.0</span>
+                <span class="p">])</span>
+
+            <span class="c1"># append the subsequent values</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;target_index&#39;</span><span class="p">]):</span>
+                <span class="k">if</span> <span class="n">nm_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">nm_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">raw_es</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">raw_es</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s1">&#39;es&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">nm_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">nm_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> \
+                        <span class="p">(</span><span class="n">raw_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">raw_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
+                    <span class="nb">float</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span>
+                    <span class="n">_inverse_scale_transform</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">nm_range</span><span class="p">,</span> <span class="o">*</span><span class="n">raw_range</span><span class="p">),</span>
+                    <span class="n">_inverse_scale_transform</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;y_hat&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">nm_range</span><span class="p">,</span> <span class="o">*</span><span class="n">raw_range</span><span class="p">),</span>
+                    <span class="n">raw_es</span><span class="p">,</span>
+                    <span class="n">v</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">v</span><span class="p">[</span><span class="s1">&#39;y_hat&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">v</span><span class="p">[</span><span class="s1">&#39;es&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+                <span class="p">])</span>
+
+            <span class="n">doc</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;signal&#39;</span><span class="p">:</span> <span class="n">datarun</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s1">&#39;datarun&#39;</span><span class="p">:</span> <span class="n">datarun</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s1">&#39;names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;y_raw&#39;</span><span class="p">,</span> <span class="s1">&#39;y_raw_hat&#39;</span><span class="p">,</span> <span class="s1">&#39;es_raw&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;y_hat&#39;</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span>
+            <span class="p">}</span>
+
+            <span class="n">model</span><span class="o">.</span><span class="n">Prediction</span><span class="p">(</span><span class="o">**</span><span class="n">doc</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+            <span class="c1"># ------ Handle Raw -------- #</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">utc</span><span class="p">):</span>
+                <span class="n">year_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+                <span class="n">year_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">year_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+                <span class="n">year_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+
+            <span class="c1"># construct dataframe from ndarrays</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;X_raw&#39;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">])</span>
+
+            <span class="c1"># optimal interval for periodical description</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="s1">&#39;raw_index&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">60</span>
+            <span class="n">my_interval</span> <span class="o">=</span> <span class="mi">1440</span>
+            <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">720</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">diff</span> <span class="o">&lt;=</span> <span class="n">interval</span><span class="p">:</span>
+                    <span class="n">my_interval</span> <span class="o">=</span> <span class="n">interval</span>
+                    <span class="k">break</span>
+
+            <span class="n">day_bin_num</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">//</span> <span class="n">my_interval</span>
+
+            <span class="n">docs</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># year</span>
+            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">year_start</span><span class="p">,</span> <span class="n">year_end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">utc</span><span class="p">):</span>
+                    <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+                <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;datarun&#39;</span><span class="p">:</span> <span class="n">datarun</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(),</span>
+                    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+                    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)]</span>
+                <span class="p">})</span>
+                <span class="c1"># month</span>
+                <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="n">days</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="c1"># day</span>
+                    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">monthrange</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">)[</span><span class="mi">1</span><span class="p">]):</span>
+                        <span class="n">days</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;means&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;counts&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+                        <span class="c1"># bin</span>
+                        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">day_bin_num</span><span class="p">):</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="n">utc</span><span class="p">):</span>
+                                <span class="n">st</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> \
+                                    <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="n">my_interval</span> <span class="o">*</span> <span class="mi">60</span>
+                                <span class="n">ed</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> \
+                                    <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">my_interval</span> <span class="o">*</span> <span class="mi">60</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">st</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> \
+                                    <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="n">my_interval</span> <span class="o">*</span> <span class="mi">60</span>
+                                <span class="n">ed</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> \
+                                    <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">my_interval</span> <span class="o">*</span> <span class="mi">60</span>
+                            <span class="n">mean</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">st</span><span class="p">:</span><span class="n">ed</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">skipna</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                            <span class="n">count</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">st</span><span class="p">:</span><span class="n">ed</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                                <span class="n">mean</span> <span class="o">=</span> <span class="mi">0</span>
+                            <span class="n">days</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;means&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">mean</span><span class="p">))</span>
+                            <span class="n">days</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;counts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+                        <span class="c1"># end of bin</span>
+                    <span class="c1"># end of day</span>
+                    <span class="n">docs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">days</span>
+                <span class="c1"># end of month</span>
+            <span class="c1"># end of year</span>
+
+            <span class="n">model</span><span class="o">.</span><span class="n">Raw</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dongyu Liu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

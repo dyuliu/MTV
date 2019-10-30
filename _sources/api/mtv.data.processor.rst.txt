@@ -1,7 +1,0 @@
-mtv.data.processor module
-=========================
-
-.. automodule:: mtv.data.processor
-   :members:
-   :undoc-members:
-   :show-inheritance:
