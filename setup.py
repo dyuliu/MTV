@@ -26,7 +26,7 @@ requirements = [
     'Flask==1.0.2',
     'Flask-Cors==3.0.7',
     'Flask-RESTful==0.3.7',
-    'Werkzeug==0.15.3',
+    'Werkzeug==0.16.0',
     'gevent==1.2.2',
 
     # Database
