@@ -6,7 +6,7 @@
 <!-- [![PyPI Shield](https://img.shields.io/pypi/v/mtv.svg)](https://pypi.python.org/pypi/mtv) -->
 [![Build Status](https://travis-ci.com/dyuliu/mtv.svg?branch=master)](https://travis-ci.com/dyuliu/mtv)
 [![Coverage Status](https://coveralls.io/repos/github/dyuliu/MTV/badge.svg)](https://coveralls.io/github/dyuliu/MTV)
-
+[![CLA](https://cla-assistant.io/readme/badge/dyuliu/MTV)](https://cla-assistant.io/dyuliu/MTV)
 
 # MTV
 
