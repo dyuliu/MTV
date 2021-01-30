@@ -7,6 +7,7 @@
 [![Build Status](https://travis-ci.com/dyuliu/mtv.svg?branch=master)](https://travis-ci.com/dyuliu/mtv)
 [![Coverage Status](https://coveralls.io/repos/github/dyuliu/MTV/badge.svg)](https://coveralls.io/github/dyuliu/MTV)
 
+I would change a little bit here.
 
 # MTV
 
@@ -141,7 +142,7 @@ optional arguments:
 
 ### Development
 
-The server-end code and client-end code are in two separate folders, namely,` <project-home>/mtv` and `<project-home>/client` 
+The server-end code and client-end code are in two separate folders, namely,` <project-home>/mtv` and `<project-home>/client`
 
 Run the following command for server-end development
 
@@ -190,13 +191,13 @@ $ gulp
   $ docker-compose down -v
   ```
 
-  
+
 
 ## Production deploy in local secure environment
 
 - Install [Docker](https://docs.docker.com/install/) and [Compose](https://docs.docker.com/compose/install/)
 
-- Download MTV project and put the MTV docker image into the project direction 
+- Download MTV project and put the MTV docker image into the project direction
 
 - Enter the MTV folder and install the docker image by running
 
